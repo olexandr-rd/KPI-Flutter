@@ -7,6 +7,7 @@ import 'practice2/practice2_main_screen.dart';
 import 'practice3/practice3_main_screen.dart';
 import 'practice4/practice4_main_screen.dart';
 import 'practice5/practice5_main_screen.dart';
+import 'practice6/practice6_main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,6 +66,10 @@ final GoRouter _router = GoRouter(
       path: '/practice5',
       builder: (context, state) => const Practice5MainScreen(),
     ),
+    GoRoute(
+      path: '/practice6',
+      builder: (context, state) => const Practice6MainScreen(),
+    ),
   ],
 );
 
@@ -116,9 +121,7 @@ class PracticeButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: ElevatedButton(
         onPressed: () {
-          if (index <= 5) { // Відкриває Practice 1-5
             context.push('/practice$index');
-          }
         },
         child: Text('Go to Practice $index'),
       ),
